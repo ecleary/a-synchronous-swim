@@ -5,12 +5,27 @@
   //
   // TODO: build the swim command fetcher here
   //
-
+  // Declare function "ajaxGetSwimCommnad"
+  const ajaxGetSwimCommnad = () => {
+    // Call the jQuery ajax method and pass in an object literal with the following properties
+    $.ajax({
+      // type prop. with value of "GET"
+      type: "GET",
+      // url prop. with value of serverURL
+      url: serverUrl,
+      // success method
+        // Invoke SwimTeam move method with received commnad/direction
+      success: (commnad) => {
+        SwimTeam.move(commnad);
+      }
+    });
+  };
+  setInterval(ajaxGetSwimCommnad, 500);
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!
   // Note: remember to fix the URL below.
   /////////////////////////////////////////////////////////////////////
-
+  // ajaxFielUplaod(somefile);
   const ajaxFileUplaod = (file) => {
     var formData = new FormData();
     formData.append('file', file);
