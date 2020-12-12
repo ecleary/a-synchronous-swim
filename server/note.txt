@@ -1,0 +1,12 @@
+Questions to ask for clarity:
+
+server/spec/mockServer.js
+- What is the proper term for the 'request' and 'response' variables? (They look like class/constructor but are not capitalized.)
+
+server- at mockServer data request
+-What is the data being requested? => swim team movement inputs/html placements/
+
+How does server and client interact with each other? Are there patterns or just that connection?
+
+Trying to implmented working functionality but not sure where to implement?
+(Related to instruction: "Write a test to verify the server responds with a random swim command to a GET request.")

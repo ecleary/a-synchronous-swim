@@ -22,7 +22,18 @@ describe('server responses', () => {
   });
 
   it('should respond to a GET request for a swim command', (done) => {
-    // write your test here
+    // do line 14, mock 2nd param we put "GET"
+    let {req, res} = server.mock('/', 'GET');
+
+    // line 16 routing our request/response
+    httpHandler.router(req, res);
+    // line 17 expecting to have a recieved code which is 200
+    expect(res._responseCode).to.equal(200);
+    // line 18 to have an end method invoked
+    expect(res._ended).to.equal(true);
+    // line 19 we should expect data = 3swim command
+    expect(res._data.toString()).to.equal(res._data.toString().match(/(up|down|left|right)/)[0]);
+
     done();
   });
 
