@@ -26,7 +26,7 @@ describe('server responses', () => {
     let {req, res} = server.mock('/', 'GET');
 
     // line 16 routing our request/response
-    httpHandler.router(req, res);
+    httpHandler.router(req, res /* callback */ ); // <-- pass in callback here to help with testing
     // line 17 expecting to have a recieved code which is 200
     expect(res._responseCode).to.equal(200);
     // line 18 to have an end method invoked

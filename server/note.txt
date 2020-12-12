@@ -1,5 +1,5 @@
 Questions to ask for clarity:
-
+Kill command for servers : kill $(lsof -t -i :{hostaddress})
 server/spec/mockServer.js
 - What is the proper term for the 'request' and 'response' variables? (They look like class/constructor but are not capitalized.)
 
