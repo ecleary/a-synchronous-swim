@@ -16,9 +16,9 @@ module.exports.router = (req, res, next = ()=>{}) => {
   const validMessages = ['left', 'right', 'up', 'down'];
   const messageLength = validMessages.length;
   // random generator for inputs
-  let randomIndex = (max) => { return Math.floor(Math.random() * max)}
-  let randomInput = validMessages[randomIndex(messageLength)];
-  console.log('Serving request type ' + req.method + ' for url ' + req.url);
+  // let randomIndex = (max) => { return Math.floor(Math.random() * max)}
+  // let randomInput = validMessages[randomIndex(messageLength)];
+  // console.log('Serving request type ' + req.method + ' for url ' + req.url);
   // If request type is an OPTIONS request
   if (req.method === "OPTIONS") {
     // Write the response code and headers
@@ -34,8 +34,10 @@ module.exports.router = (req, res, next = ()=>{}) => {
     if (req.url === '/') {
       // write the response code and headers
       res.writeHead(200, headers);
-      // response end method (`randominput`)
-      res.end(randomInput);
+      // // response end method (`randominput`)
+      // res.end(randomInput);
+      // response end method (messageQueue)
+      res.end(messageQueue);
     }
   }
 };
